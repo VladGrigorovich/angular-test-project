@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { SearchQuoteComponent } from './search-quote/search-quote.component';
 import { RandomQuoteComponent } from './random-quote/random-quote.component';
 import { QuoteComponent } from './quote/quote.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent, SearchQuoteComponent, RandomQuoteComponent, QuoteComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FlexLayoutModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

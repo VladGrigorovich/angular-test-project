@@ -1,0 +1,43 @@
+.container {
+  min-height: 100vh;
+
+  .svg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 256px;
+    box-sizing: content-box;
+    background-color: #e3e3e3;
+    border: 1px solid #979797;
+    z-index: -1;
+
+    .line {
+      stroke: #979797;
+      stroke-width: 1;
+    }
+  }
+
+  .label {
+    font-family: Roboto, 'sans-serif';
+    font-weight: 400;
+    font-size: 36px;
+    color: #c4c4c4;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .logo-wrapper {
+    margin-top: 22px;
+    height: 326px;
+    width: 326px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.22);
+
+    > img {
+      height: 219px;
+      width: 360px;
+    }
+  }
+}
