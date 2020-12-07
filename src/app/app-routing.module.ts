@@ -5,7 +5,7 @@ import { SearchQuoteComponent } from './search-quote/search-quote.component';
 
 const routes: Routes = [
   {
-    path: 'random-quote',
+    path: '',
     component: RandomQuoteComponent,
   },
   {
