@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="10px" viewBox="0 0 9 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>general / chevron / down copy 2</title>
+    <defs>
+        <path d="M8.4623106,3.71966991 L11.6442911,6.90165043 C11.9371843,7.19454365 11.9371843,7.66941738 11.6442911,7.9623106 C11.3513979,8.25520382 10.8765242,8.25520382 10.5836309,7.9623106 L8.75,6.129 L8.75,11.7426407 C8.75,12.1568542 8.41421356,12.4926407 8,12.4926407 C7.58578644,12.4926407 7.25,12.1568542 7.25,11.7426407 L7.25,5.993 L5.28033009,7.9623106 C4.98743687,8.25520382 4.51256313,8.25520382 4.21966991,7.9623106 C3.9267767,7.66941738 3.9267767,7.19454365 4.21966991,6.90165043 L7.40165043,3.71966991 C7.53478371,3.58653663 7.70551627,3.51391848 7.87966695,3.50181545 L7.98429408,3.50181545 C8.15844476,3.51391848 8.32917732,3.58653663 8.4623106,3.71966991 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Line-selected" transform="translate(-959.000000, -686.000000)">
+            <g id="Group-10" transform="translate(215.000000, 669.000000)">
+                <g id="Group-7-Copy-2" transform="translate(642.057878, 0.000000)">
+                    <g id="table/-header" transform="translate(0.000000, 12.000000)">
+                        <g id="Group" transform="translate(98.000000, 2.000000)">
+                            <g id="general-/-chevron-/-down-copy-2" transform="translate(8.000000, 8.000000) scale(1, -1) rotate(-180.000000) translate(-8.000000, -8.000000) ">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="general-/-chevron-/-down" fill="#D8D8D8" transform="translate(7.931981, 7.996320) scale(1, -1) translate(-7.931981, -7.996320) " xlink:href="#path-1"></use>
+                                <g id="Group" mask="url(#mask-2)" fill="#405A66">
+                                    <g id="Colors-/-Placeholder-Copy">
+                                        <rect id="#405A66" x="0" y="0" width="16" height="16"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
