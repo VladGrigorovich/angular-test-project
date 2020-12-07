@@ -1,60 +1,45 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$angular-test-project-primary: mat-palette($mat-indigo);
+$angular-test-project-primary: mat-palette($mat-deep-orange);
 $angular-test-project-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
 $angular-test-project-warn: mat-palette($mat-red);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$angular-test-project-theme: mat-light-theme((
-  color: (
-    primary: $angular-test-project-primary,
-    accent: $angular-test-project-accent,
-    warn: $angular-test-project-warn,
+$angular-test-project-theme: mat-light-theme(
+  (
+    color: (
+      primary: $angular-test-project-primary,
+      accent: $angular-test-project-accent,
+      warn: $angular-test-project-warn,
+    ),
   )
-));
+);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include angular-material-theme($angular-test-project-theme);
-
-@import "node_modules/@angular/material/theming";
+@import 'node_modules/@angular/material/theming';
 @include mat-core();
 
-* {
-  box-sizing: border-box;
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
-  border: 1px solid #F15A24;
+  border: 1px solid #f15a24;
+
   .mat-button-toggle.mat-button-toggle-appearance-standard {
-    color: #F15A24;
+    color: #f15a24;
     width: 120px;
 
-    +.mat-button-toggle {
-      border-left: 1px solid #F15A24;
+    + .mat-button-toggle {
+      border-left: 1px solid #f15a24;
     }
 
     &.mat-button-toggle-checked {
-      background-color: #F15A24;
+      background-color: #f15a24;
       button {
         color: white;
       }
@@ -69,5 +54,28 @@ mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
     .mat-button-toggle-focus-overlay {
       background-color: transparent;
     }
+  }
+}
+
+mat-form-field[appearance='outline'] {
+  width: 100%;
+
+  .mat-form-field-flex {
+    padding-bottom: 5px;
+  }
+
+  .mat-form-field-infix {
+    width: auto;
+    padding: 0.5em 0;
+  }
+
+  .mat-form-field-outline {
+    background-color: #fff;
+    border-radius: 5px;
+  }
+
+  .mat-form-field-wrapper {
+    margin: 0;
+    padding: 0;
   }
 }

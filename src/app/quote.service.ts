@@ -14,7 +14,7 @@ export class QuoteService {
   public getRandomQuote(props: RandomQuoteProps): Observable<Quote> {
     let url = `${environment.api.chuck}/jokes/random?`;
     if (props.name && props.name.length > 0) {
-      url += `name=${name}&`;
+      url += `name=${props.name}&`;
     }
     if (props.categories && props.categories.length > 0) {
       const categoriesQuery = props.categories.join(',');
@@ -26,5 +26,10 @@ export class QuoteService {
   public searchQuotes(query: string): Observable<Quote[]> {
     const url = `${environment.api.chuck}/jokes/search?query=${query}`;
     return this.httpClient.get<Quote[]>(url);
+  }
+
+  public getCategories(): Observable<string[]> {
+    const url = `${environment.api.chuck}/jokes/categories`;
+    return this.httpClient.get<string[]>(url);
   }
 }

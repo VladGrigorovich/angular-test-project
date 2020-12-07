@@ -1,5 +1,7 @@
 .container {
+  padding: 0 183px;
   min-height: 100vh;
+  background-color: #fbfcff;
 
   .svg-container {
     position: absolute;
@@ -10,9 +12,9 @@
     box-sizing: content-box;
     background-color: #e3e3e3;
     border: 1px solid #979797;
-    z-index: -1;
+    z-index: 1;
 
-    .line {
+    .polyline {
       stroke: #979797;
       stroke-width: 1;
     }
@@ -24,6 +26,7 @@
     color: #c4c4c4;
     text-align: center;
     margin-top: 30px;
+    z-index: 2;
   }
 
   .logo-wrapper {
@@ -33,6 +36,7 @@
     border-radius: 50%;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.22);
+    z-index: 2;
 
     > img {
       height: 219px;
@@ -45,6 +49,7 @@
   }
 
   .content {
+    width: 100%;
     margin-top: 25px;
   }
 }

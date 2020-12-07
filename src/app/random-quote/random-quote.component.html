@@ -1,1 +1,32 @@
-<p>random-quote works!</p>
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <mat-spinner *ngIf="!form"></mat-spinner>
+  <form *ngIf="form" [formGroup]="form" class="toolbar" fxLayoutAlign="start center">
+    <div class="form-field" fxFlex="1 2 auto" fxLayoutAlign="start center">
+      <label class="form-field-label">Name</label>
+      <mat-form-field appearance="outline">
+        <input formControlName="name" matInput type="text" placeholder="e.g. Chuck Norris" />
+      </mat-form-field>
+    </div>
+    <div class="form-field" fxFlex="1 1 auto" fxLayoutAlign="start center">
+      <label class="form-field-label">Categories</label>
+      <mat-form-field appearance="outline">
+        <mat-select placeholder="All categories" formControlName="category">
+          <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button
+      (click)="onSubmit()"
+      class="submit-button"
+      fxFlex="1 2 100px"
+      mat-flat-button
+      color="primary"
+    >
+      GO!
+    </button>
+  </form>
+  <mat-spinner *ngIf="isLoadingQuote"></mat-spinner>
+  <div *ngIf="quote && !isLoadingQuote" class="quote-wrapper" fxLayoutAlign="center center">
+    <app-quote [quote]="quote.value"></app-quote>
+  </div>
+</div>
