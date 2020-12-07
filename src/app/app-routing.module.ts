@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RandomQuoteComponent } from './random-quote/random-quote.component';
+import { SearchQuoteComponent } from './search-quote/search-quote.component';
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'random-quote',
+    component: RandomQuoteComponent,
+  },
+  {
+    path: 'search-quote',
+    component: SearchQuoteComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
