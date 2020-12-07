@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  min-width: 200px;
+  max-width: 678px;
+  min-height: 200px;
+
+  .comma {
+    position: absolute;
+    width: 62px;
+    height: 52px;
+
+    &-top {
+      top: 0;
+      left: 0;
+    }
+
+    &-bottom {
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .rect {
+    position: absolute;
+
+    &-top {
+      top: 60px;
+      left: 31px;
+      bottom: 26px;
+      right: 70px;
+      border-left: 5px solid #29abe2;
+      border-bottom: 5px solid #29abe2;
+    }
+
+    &-bottom {
+      top: 26px;
+      left: 70px;
+      bottom: 60px;
+      right: 31px;
+      border-right: 5px dashed #29abe2;
+      border-top: 5px dashed #29abe2;
+    }
+  }
+
+  .content {
+    width: 100%;
+    margin: 60px;
+    color: #29abe2;
+    font-size: 35px;
+  }
+}
