@@ -22,12 +22,12 @@
   </form>
   <div class="table-wrapper" fxLayout="column" fxLayoutAlign="center center">
     <table
-      mat-table
       [dataSource]="dataSource"
+      mat-table
       matSort
       multiTemplateDataRows
-      class="mat-elevation-z8"
     >
+      <!-- ID -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>
           <div class="title">
@@ -38,6 +38,7 @@
         <td mat-cell *matCellDef="let element">{{ element.id }}</td>
       </ng-container>
 
+      <!-- CATEGORIES -->
       <ng-container matColumnDef="categories">
         <th mat-header-cell *matHeaderCellDef>
           <div class="title">
@@ -48,6 +49,7 @@
         <td mat-cell *matCellDef="let element">{{ element.categories }}</td>
       </ng-container>
 
+      <!-- CREATED DATE -->
       <ng-container matColumnDef="created_at">
         <th mat-header-cell mat-sort-header *matHeaderCellDef>
           <div class="title">
@@ -58,11 +60,12 @@
         <td mat-cell *matCellDef="let element">{{ element.created_at }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="expandedDetail">
+      <!-- QUOTE EXPAND ROW -->
+      <ng-container matColumnDef="quote">
         <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
           <div
             class="quote-wrapper"
-            [@detailExpand]="element == expanded ? 'expanded' : 'collapsed'"
+            [@detailExpand]="element == expandedQuote ? 'expanded' : 'collapsed'"
           >
             <app-quote [quote]="element.value"></app-quote>
           </div>
@@ -72,12 +75,12 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr
         class="info-row"
-        [class.example-expanded-row]="expanded === element"
-        (click)="expanded = expanded === element ? null : element"
         mat-row
+        [class.example-expanded-row]="expandedQuote === element"
+        (click)="expandedQuote = expandedQuote === element ? null : element"
         *matRowDef="let element; columns: displayedColumns"
       ></tr>
-      <tr class="quote-row" mat-row *matRowDef="let row; columns: ['expandedDetail']"></tr>
+      <tr class="quote-row" mat-row *matRowDef="let row; columns: ['quote']"></tr>
     </table>
     <mat-spinner *ngIf="isLoadingQuotes"></mat-spinner>
   </div>

@@ -18,10 +18,15 @@ export class RandomQuoteComponent implements OnInit {
   constructor(private readonly quoteService: QuoteService) {}
 
   ngOnInit(): void {
-    this.quoteService.getCategories().subscribe((c) => {
-      this.categories = c;
-      this.createFormGroup();
-    });
+    this.quoteService.getCategories().subscribe(
+      (c) => {
+        this.categories = c;
+        this.createFormGroup();
+      },
+      (e) => {
+        console.error(e);
+      },
+    );
   }
 
   createFormGroup() {
@@ -32,15 +37,16 @@ export class RandomQuoteComponent implements OnInit {
   }
 
   onSubmit() {
-    const value = this.form.value;
-    const props: RandomQuoteProps = {
-      name: value.name,
-      categories: typeof value.categories === 'string' ? [value.categories] : value.categories,
-    };
+    const props: RandomQuoteProps = { ...this.form.value };
     this.isLoadingQuote = true;
-    this.quoteService.getRandomQuote(props).subscribe((q) => {
-      this.isLoadingQuote = false;
-      this.quote = q;
-    });
+    this.quoteService.getRandomQuote(props).subscribe(
+      (q) => {
+        this.isLoadingQuote = false;
+        this.quote = q;
+      },
+      (e) => {
+        console.error(e);
+      },
+    );
   }
 }
