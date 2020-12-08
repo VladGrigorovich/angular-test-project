@@ -4,6 +4,7 @@ import { QuoteService } from '../quote.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { state, style, transition, trigger, animate } from '@angular/animations';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-search-quote',
@@ -18,9 +19,11 @@ import { state, style, transition, trigger, animate } from '@angular/animations'
   ],
 })
 export class SearchQuoteComponent {
+  public form = new FormGroup({
+    query: new FormControl(null, Validators.required),
+  });
   public displayedColumns = ['id', 'categories', 'created_at'];
   public isLoadingQuotes = false;
-  public query = '';
   public dataSource = new MatTableDataSource<Quote>();
   public expanded: Quote;
 
@@ -32,7 +35,7 @@ export class SearchQuoteComponent {
 
   onSubmit() {
     this.isLoadingQuotes = true;
-    this.quoteService.searchQuotes(this.query).subscribe((r) => {
+    this.quoteService.searchQuotes(this.form.get('query').value).subscribe((r) => {
       this.dataSource.data = r.result;
       this.isLoadingQuotes = false;
     });

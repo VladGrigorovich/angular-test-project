@@ -20,16 +20,15 @@
         }
 
         .filter {
-          position: absolute;
-          right: -35px;
-          top: 2px;
-          width: 15px;
-          height: 15px;
+          margin-left: 5px;
+          margin-top: 2px;
+          width: 13px;
+          height: 13px;
           cursor: pointer;
         }
 
         .title {
-          position: relative;
+          padding-top: 4px;
         }
       }
 
