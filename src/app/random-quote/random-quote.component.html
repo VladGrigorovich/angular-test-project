@@ -1,7 +1,7 @@
 <div class="container" fxLayout="column" fxLayoutAlign="center center">
   <app-toolbar>
     <mat-spinner *ngIf="!form"></mat-spinner>
-    <form *ngIf="form" [formGroup]="form" fxLayoutAlign="start center" fxLayoutGap="20px">
+    <form *ngIf="form" [formGroup]="form" fxLayoutAlign="start center">
       <div class="form-field" fxFlex="1 2 auto" fxLayoutAlign="start center">
         <label class="form-field-label">Name</label>
         <mat-form-field appearance="outline">
@@ -17,6 +17,7 @@
         </mat-form-field>
       </div>
       <button
+        [disabled]="!form.get('name').value?.length || !form.get('categories').value?.length"
         (click)="onSubmit()"
         class="submit-button"
         fxFlex="1 2 100px"

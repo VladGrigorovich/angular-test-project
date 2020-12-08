@@ -59,6 +59,7 @@ mat-button-toggle-group.mat-button-toggle-group-appearance-standard {
 
 mat-form-field[appearance='outline'] {
   width: 100%;
+  min-width: 60px;
 
   .mat-form-field-flex {
     padding-bottom: 5px;

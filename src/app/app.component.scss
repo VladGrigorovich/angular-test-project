@@ -1,8 +1,11 @@
 .container {
   padding: 0 183px;
   min-height: 100vh;
-  background-image: url("../assets/images/chuck-norris-nikita-abakumov.jpg"), linear-gradient(#f15a24, #a5401c);
+  background-image: url("../assets/images/walker-texas-ranger-chuck-norris.png");
+  background-color: #FBFCFF;
   background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% 300px;
 
   .label {
     font-weight: 400;
@@ -14,7 +17,7 @@
   }
 
   .logo-wrapper {
-    margin-top: 22px;
+    margin-top: 94px;
     height: 326px;
     width: 326px;
     border-radius: 50%;
@@ -35,5 +38,6 @@
   .content {
     width: 100%;
     margin-top: 25px;
+    min-width: 551px;
   }
 }

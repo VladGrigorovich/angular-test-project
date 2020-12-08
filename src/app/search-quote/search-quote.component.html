@@ -5,9 +5,7 @@
         <label fxFlex="1 1 70px" class="form-field-label">Key word(s)</label>
         <mat-form-field appearance="outline">
           <input formControlName="query" matInput type="text" placeholder="e.g. Chuck Norris" />
-          <mat-error *ngIf="form.touched && form.get('query').invalid">
-            Required.
-          </mat-error>
+          <mat-error *ngIf="form.touched && form.get('query').invalid"> Required. </mat-error>
         </mat-form-field>
       </div>
       <button
@@ -23,12 +21,7 @@
     </form>
   </app-toolbar>
   <div class="table-wrapper" fxLayout="column" fxLayoutAlign="center center">
-    <table
-      [dataSource]="dataSource"
-      mat-table
-      matSort
-      multiTemplateDataRows
-    >
+    <table [dataSource]="dataSource" mat-table matSort multiTemplateDataRows>
       <!-- ID -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>
@@ -55,7 +48,7 @@
       <ng-container matColumnDef="created_at">
         <th mat-header-cell mat-sort-header *matHeaderCellDef>
           <div class="title">
-            Created at
+            Date created
             <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" />
           </div>
         </th>
