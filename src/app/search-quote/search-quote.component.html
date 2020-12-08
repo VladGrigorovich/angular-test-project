@@ -1,25 +1,27 @@
 <div class="container" fxLayout="column" fxLayoutAlign="center center">
-  <form [formGroup]="form" class="toolbar" fxLayoutAlign="space-between center">
-    <div class="form-field" fxFlex="1 1 70%" fxLayoutAlign="start center">
-      <label fxFlex="1 1 70px" class="form-field-label">Key word(s)</label>
-      <mat-form-field appearance="outline">
-        <input formControlName="query" matInput type="text" placeholder="e.g. Chuck Norris" />
-        <mat-error *ngIf="form.touched && form.get('query').invalid">
-          Required.
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <button
-      [disabled]="form.invalid"
-      (click)="onSubmit()"
-      class="submit-button"
-      fxFlex="1 1 160px"
-      mat-flat-button
-      color="primary"
-    >
-      GO!
-    </button>
-  </form>
+  <app-toolbar>
+    <form [formGroup]="form" fxLayoutAlign="space-between center">
+      <div class="form-field" fxFlex="1 1 70%" fxLayoutAlign="start center">
+        <label fxFlex="1 1 70px" class="form-field-label">Key word(s)</label>
+        <mat-form-field appearance="outline">
+          <input formControlName="query" matInput type="text" placeholder="e.g. Chuck Norris" />
+          <mat-error *ngIf="form.touched && form.get('query').invalid">
+            Required.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button
+        [disabled]="form.invalid"
+        (click)="onSubmit()"
+        class="submit-button"
+        fxFlex="1 1 160px"
+        mat-flat-button
+        color="primary"
+      >
+        GO!
+      </button>
+    </form>
+  </app-toolbar>
   <div class="table-wrapper" fxLayout="column" fxLayoutAlign="center center">
     <table
       [dataSource]="dataSource"

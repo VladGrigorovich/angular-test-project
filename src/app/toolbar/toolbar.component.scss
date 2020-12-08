@@ -1,0 +1,32 @@
+app-toolbar {
+  width: 100%;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 32px;
+  background-color: #fff2ee;
+
+  mat-spinner {
+    margin: 0 auto;
+  }
+
+  .form-field {
+    + .form-field {
+      margin-left: 32px;
+    }
+
+    &-label {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 20px;
+      color: #16303c;
+      margin-right: 12px;
+    }
+  }
+
+  .submit-button {
+    margin-left: 20px;
+  }
+}
