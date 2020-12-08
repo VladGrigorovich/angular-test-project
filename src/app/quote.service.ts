@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Quote } from './shared/interfaces/quote';
 import { RandomQuoteProps } from './shared/interfaces/random-quote-props';
 import { environment } from '../environments/environment';
-import {SearchQuotesResponse} from './shared/interfaces/search-quotes-response';
+import { SearchQuotesResponse } from './shared/interfaces/search-quotes-response';
 
 @Injectable({
   providedIn: 'root',
