@@ -2,7 +2,6 @@
   position: relative;
   min-width: 200px;
   max-width: 678px;
-  min-height: 200px;
 
   .comma {
     position: absolute;
@@ -43,6 +42,8 @@
   }
 
   .content {
+    word-wrap: break-word;
+    max-width: 500px;
     line-height: 40px;
     width: 100%;
     margin: 60px;
