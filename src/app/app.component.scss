@@ -1,24 +1,9 @@
 .container {
   padding: 0 183px;
   min-height: 100vh;
-  background-color: #fbfcff;
-
-  .svg-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 256px;
-    box-sizing: content-box;
-    background-color: #e3e3e3;
-    border: 1px solid #979797;
-    z-index: 1;
-
-    .polyline {
-      stroke: #979797;
-      stroke-width: 1;
-    }
-  }
+  background-image: url("../assets/images/chuck-norris-nikita-abakumov.jpg"), linear-gradient(#f15a24, #a5401c);
+  background-repeat: no-repeat;
+  background-position: center top;
 
   .label {
     font-weight: 400;
