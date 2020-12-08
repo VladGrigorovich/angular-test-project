@@ -9,8 +9,8 @@
   </div>
   <div class="nav">
     <mat-button-toggle-group>
-      <mat-button-toggle routerLink="/" checked="true">Random</mat-button-toggle>
-      <mat-button-toggle routerLink="/search-quote">Search</mat-button-toggle>
+      <mat-button-toggle routerLink="random-quote" [checked]="url === '/random-quote'">Random</mat-button-toggle>
+      <mat-button-toggle routerLink="search-quote" [checked]="url === '/search-quote'">Search</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
   <div class="content" fxLayout="column">

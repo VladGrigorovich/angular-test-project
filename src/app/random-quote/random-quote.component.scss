@@ -1,28 +1,4 @@
 .container {
-  .toolbar {
-    width: 100%;
-    padding: 32px;
-    background-color: #fff2ee;
-
-    .form-field {
-      + .form-field {
-        margin-left: 32px;
-      }
-
-      &-label {
-        font-weight: 500;
-        font-size: 13px;
-        line-height: 20px;
-        color: #16303c;
-        margin-right: 12px;
-      }
-    }
-
-    .submit-button {
-      margin-left: 20px;
-    }
-  }
-
   .quote-wrapper {
     padding: 26px 126px;
     background-color: #fff;

@@ -1,1 +1,80 @@
-<p>search-quote works!</p>
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <div class="toolbar" fxLayoutAlign="space-between center">
+    <div class="form-field" fxFlex="1 1 70%" fxLayoutAlign="start center">
+      <label fxFlex="1 1 70px" class="form-field-label">Key word(s)</label>
+      <mat-form-field appearance="outline">
+        <input [(ngModel)]="query" matInput type="text" placeholder="e.g. Chuck Norris" />
+      </mat-form-field>
+    </div>
+    <button
+      (click)="onSubmit()"
+      class="submit-button"
+      fxFlex="1 1 160px"
+      mat-flat-button
+      color="primary"
+    >
+      GO!
+    </button>
+  </div>
+  <div class="table-wrapper" fxLayout="column" fxLayoutAlign="center center">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      multiTemplateDataRows
+      class="mat-elevation-z8"
+    >
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>
+          <div class="title">
+            ID
+            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="categories">
+        <th mat-header-cell *matHeaderCellDef>
+          <div class="title">
+            Categories
+            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.categories }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="created_at">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>
+          <div class="title">
+            Created at
+            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" />
+          </div>
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.created_at }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+          <div
+            class="quote-wrapper"
+            [@detailExpand]="element == expanded ? 'expanded' : 'collapsed'"
+          >
+            <app-quote [quote]="element.value"></app-quote>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        class="info-row"
+        [class.example-expanded-row]="expanded === element"
+        (click)="expanded = expanded === element ? null : element"
+        mat-row
+        *matRowDef="let element; columns: displayedColumns"
+      ></tr>
+      <tr class="quote-row" mat-row *matRowDef="let row; columns: ['expandedDetail']"></tr>
+    </table>
+    <mat-spinner *ngIf="isLoadingQuotes"></mat-spinner>
+  </div>
+</div>

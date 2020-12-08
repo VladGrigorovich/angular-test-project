@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Quote } from './shared/interfaces/quote';
 import { RandomQuoteProps } from './shared/interfaces/random-quote-props';
 import { environment } from '../environments/environment';
+import {SearchQuoteResponse} from './shared/interfaces/search-quote-response';
 
 @Injectable({
   providedIn: 'root',
@@ -23,9 +24,9 @@ export class QuoteService {
     return this.httpClient.get<Quote>(url);
   }
 
-  public searchQuotes(query: string): Observable<Quote[]> {
+  public searchQuotes(query: string): Observable<SearchQuoteResponse> {
     const url = `${environment.api.chuck}/jokes/search?query=${query}`;
-    return this.httpClient.get<Quote[]>(url);
+    return this.httpClient.get<SearchQuoteResponse>(url);
   }
 
   public getCategories(): Observable<string[]> {

@@ -1,9 +1,9 @@
 export interface Quote {
   categories: string[];
-  created_at: Date;
+  created_at: string;
   icon_url: string;
   id: string;
-  updated_at: Date;
+  updated_at: string;
   url: string;
   value: string;
 }

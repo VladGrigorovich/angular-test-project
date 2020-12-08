@@ -6,6 +6,11 @@ import { SearchQuoteComponent } from './search-quote/search-quote.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'random-quote',
+    pathMatch: 'full'
+  },
+  {
+    path: 'random-quote',
     component: RandomQuoteComponent,
   },
   {

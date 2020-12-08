@@ -26,20 +26,17 @@ export class RandomQuoteComponent implements OnInit {
 
   createFormGroup() {
     this.form = new FormGroup({
-      name: new FormControl(''),
-      category: new FormControl(''),
+      name: new FormControl(null),
+      categories: new FormControl(null),
     });
   }
 
   onSubmit() {
     const value = this.form.value;
-    const props: RandomQuoteProps = {};
-    if (value.name.trim().length > 0) {
-      props.name = value.name;
-    }
-    if (value.category) {
-      props.categories = [value.category];
-    }
+    const props: RandomQuoteProps = {
+      name: value.name,
+      categories: typeof value.categories === 'string' ? [value.categories] : value.categories,
+    };
     this.isLoadingQuote = true;
     this.quoteService.getRandomQuote(props).subscribe((q) => {
       this.isLoadingQuote = false;

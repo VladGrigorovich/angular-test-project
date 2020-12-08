@@ -10,7 +10,7 @@
     <div class="form-field" fxFlex="1 1 auto" fxLayoutAlign="start center">
       <label class="form-field-label">Categories</label>
       <mat-form-field appearance="outline">
-        <mat-select placeholder="All categories" formControlName="category">
+        <mat-select placeholder="All categories" formControlName="categories">
           <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
         </mat-select>
       </mat-form-field>
