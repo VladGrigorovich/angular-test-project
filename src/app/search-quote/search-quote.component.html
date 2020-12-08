@@ -5,7 +5,7 @@
         <label fxFlex="1 1 70px" class="form-field-label">Key word(s)</label>
         <mat-form-field appearance="outline">
           <input formControlName="query" matInput type="text" placeholder="e.g. Chuck Norris" />
-          <mat-error *ngIf="form.touched && form.get('query').invalid"> Required. </mat-error>
+          <mat-error *ngIf="form.touched && form.get('query')"> Required. Length must be between 3 and 120. </mat-error>
         </mat-form-field>
       </div>
       <button
@@ -27,7 +27,7 @@
         <th mat-header-cell *matHeaderCellDef>
           <div class="title">
             ID
-            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" />
+            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" alt="filter" />
           </div>
         </th>
         <td mat-cell *matCellDef="let element">{{ element.id }}</td>
@@ -37,8 +37,8 @@
       <ng-container matColumnDef="categories">
         <th mat-header-cell *matHeaderCellDef>
           <div class="title">
-            Categories
-            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" />
+            Category
+            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" alt="filter" />
           </div>
         </th>
         <td mat-cell *matCellDef="let element">{{ element.categories }}</td>
@@ -49,7 +49,7 @@
         <th mat-header-cell mat-sort-header *matHeaderCellDef>
           <div class="title">
             Date created
-            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" />
+            <img class="filter" src="/assets/images/general%20/%20chevron%20/%20down-1.svg" alt="filter"/>
           </div>
         </th>
         <td mat-cell *matCellDef="let element">{{ element.created_at }}</td>

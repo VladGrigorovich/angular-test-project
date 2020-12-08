@@ -23,7 +23,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SearchQuoteComponent {
   public form = new FormGroup({
-    query: new FormControl(null, Validators.required),
+    query: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(120),
+    ]),
   });
   public displayedColumns = ['id', 'categories', 'created_at'];
   public isLoadingQuotes = false;

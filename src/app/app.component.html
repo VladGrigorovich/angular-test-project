@@ -1,7 +1,10 @@
-<div class="container" fxLayout="column" fxLayoutAlign="start center">
+<div class="header">
+  <div class="picture"></div>
   <div class="logo-wrapper" fxLayoutAlign="center center">
     <img src="/assets/images/chucknorris_logo_coloured_small@2x.svg" alt="logo" />
   </div>
+</div>
+<div class="container" fxLayout="column" fxLayoutAlign="start center">
   <div class="nav">
     <mat-button-toggle-group>
       <mat-button-toggle routerLink="random-quote" [checked]="url === '/random-quote'">Random</mat-button-toggle>

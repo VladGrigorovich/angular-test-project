@@ -1,23 +1,16 @@
-.container {
-  padding: 0 183px;
-  min-height: 100vh;
-  background-image: url("../assets/images/walker-texas-ranger-chuck-norris.png");
-  background-color: #FBFCFF;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: 100% 300px;
+.header {
+  width: 100%;
 
-  .label {
-    font-weight: 400;
-    font-size: 36px;
-    color: #c4c4c4;
-    text-align: center;
-    margin-top: 30px;
-    z-index: 2;
+  .picture {
+    background-color: #f15a24;
+    width: 100%;
+    height: 256px;
   }
 
   .logo-wrapper {
-    margin-top: 94px;
+    margin-top: -170px;
+    margin-left: auto;
+    margin-right: auto;
     height: 326px;
     width: 326px;
     border-radius: 50%;
@@ -30,6 +23,23 @@
       width: 360px;
     }
   }
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1024px;
+  min-width: 480px;
+  min-height: 100vh;
+
+  .label {
+    font-weight: 400;
+    font-size: 36px;
+    color: #c4c4c4;
+    text-align: center;
+    margin-top: 30px;
+    z-index: 2;
+  }
 
   .nav {
     margin-top: 64px;
@@ -38,6 +48,5 @@
   .content {
     width: 100%;
     margin-top: 25px;
-    min-width: 551px;
   }
 }
